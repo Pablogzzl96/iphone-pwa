@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <!-- viewport-fit=cover permite usar toda la pantalla (incluida la zona del notch / Dynamic Island) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>iPhone PWA</title>
+  <meta name="description" content="Plantilla PWA instalable en iPhone." />
+
+  <!-- Manifest: nombre, íconos y modo standalone -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#1E2A38" />
+
+  <!-- Específico de iOS / Safari -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="iPhone PWA" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="greeting">Hola</p>
+        <h1>iPhone PWA</h1>
+      </div>
+      <div class="chips">
+        <span class="chip" id="mode-chip">Navegador</span>
+        <span class="chip" id="net-chip">En línea</span>
+      </div>
+    </header>
+
+    <!-- Guía de instalación: solo aparece en iPhone/iPad cuando la app aún no está instalada -->
+    <section class="card install" id="install-card" hidden>
+      <h2>Instálala en tu iPhone</h2>
+      <ol>
+        <li>Abre esta página en <strong>Safari</strong>.</li>
+        <li>Toca <strong>Compartir</strong> <span class="share-icon" aria-hidden="true">⬆︎</span> en la barra inferior.</li>
+        <li>Elige <strong>Agregar a pantalla de inicio</strong> y confirma.</li>
+      </ol>
+      <p class="muted">Se abrirá a pantalla completa, sin barra del navegador, y funcionará sin conexión.</p>
+    </section>
+
+    <section class="card">
+      <h2>Nota rápida</h2>
+      <p class="muted">Se guarda en este dispositivo, incluso sin internet.</p>
+      <textarea id="note" rows="5" placeholder="Escribe algo…"></textarea>
+      <p class="muted small" id="note-status">&nbsp;</p>
+    </section>
+
+    <section class="card">
+      <h2>Estado de la app</h2>
+      <ul class="facts">
+        <li><span>Versión</span><strong id="app-version">—</strong></li>
+        <li><span>Modo offline</span><strong id="sw-status">Preparando…</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Aviso cuando hay una versión nueva publicada -->
+  <div class="toast" id="update-toast" hidden>
+    <span>Hay una versión nueva.</span>
+    <button type="button" id="update-btn">Actualizar</button>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

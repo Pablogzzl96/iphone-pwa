@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pruebas de calc.js</title>
+  <link rel="icon" type="image/png" href="../icons/favicon-32.png" />
+  <style>
+    body { font: 15px/1.5 -apple-system, system-ui, sans-serif; background: #1E2A38; color: #F3F6F9; padding: 20px; }
+    li.ok { color: #A3E635; } li.fail { color: #F5B041; }
+  </style>
+</head>
+<body>
+  <h1>Pruebas de calc.js</h1>
+  <p id="resumen">Corriendo…</p>
+  <ul id="lista"></ul>
+  <script type="module">
+    import { resultados } from './calc.test.js';
+    const lista = document.getElementById('lista');
+    for (const r of resultados) {
+      const li = document.createElement('li');
+      li.className = r.ok ? 'ok' : 'fail';
+      li.textContent = (r.ok ? '✓ ' : '✗ ') + r.nombre;
+      lista.append(li);
+    }
+    const n = resultados.filter((r) => r.ok).length;
+    document.getElementById('resumen').textContent = `${n}/${resultados.length} pruebas OK`;
+  </script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 {
-  "name": "iPhone PWA",
-  "short_name": "iPhone PWA",
-  "description": "Plantilla PWA instalable en iPhone.",
+  "name": "Tracker",
+  "short_name": "Tracker",
+  "description": "Tracker personal de nutrición y peso. Offline, sin cuentas; los datos viven solo en el dispositivo.",
   "lang": "es",
-  "id": "./",
+  "id": "/iphone-pwa/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

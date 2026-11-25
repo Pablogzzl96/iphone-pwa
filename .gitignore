@@ -1,0 +1,5 @@
+# Respaldos y exportaciones personales: nunca se suben al repositorio público
+tracker-*.json
+*.csv
+exports/
+.DS_Store
